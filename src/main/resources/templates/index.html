@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vantage - Estude de graça</title>
+
+    <link th:href="@{/edu/assets/css/theme.css}" href="" rel="stylesheet" />
+</head>
+<body>
+
+<main class="main" id="top">
+    <section class="bg-secondary py-2 d-none d-sm-block">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-auto d-none d-lg-block">
+                    <p class="my-2 text-white"><span>Faça parte da maior comunidade de formação gratuita do Brasil.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="/"><span class="fw-semi-bold">Vantage</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+                    <li class="nav-item px-2"><a class="nav-link active" aria-current="page" href="/#">Início</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="/#precos">Preços</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="/cursos">Cursos</a></li>
+                </ul><a class="btn btn-primary order-1 order-lg-0 text-white" href="/login">Entrar</a>
+                <form class="d-flex my-3 d-block d-lg-none">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+                    <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                </form>
+                <div class="dropdown d-none d-lg-block">
+                    <button class="btn btn-outline-light ms-2" id="dropdownMenuButton1" type="submit" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-search text-800"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1" style="top:55px">
+                        <form>
+                            <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="pt-6 bg-600" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 col-lg-6 order-0 order-md-1 text-center"><img class="pt-0 pt-lg-7 w-50 w-md-100" th:src="@{/edu/assets/img/gallery/hero-header1.svg}" width="470" alt="hero-header" /></div>
+                <div class="col-md-7 col-lg-6 text-md-start text-center py-6">
+                    <h4 class="fw-bold font-sans-serif">Torne-se um programador</h4>
+                    <h1 class="fs-6 fs-xl-7 mb-5">Aprenda gratuitamente com nossos cursos</h1><a class="btn btn-primary me-2" href="/" role="button">Entar</a><a class="btn btn-outline-secondary" href="/" role="button">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-0" style="margin-top:-5.8rem">
+
+        <div class="container">
+            <div class="row">
+                <div class="card card-span bg-secondary">
+                    <div class="card-body">
+                        <div class="row flex-center gx-0">
+                            <div class="col-lg-4 col-xl-2 text-center text-xl-start"><img th:src="@{/edu/assets/img/gallery/funfacts.png}" width="170" alt="..." /></div>
+                            <div class="col-lg-8 col-xl-4">
+                                <h1 class="text-light fs-lg-4 fs-xl-5">Em breve mais um curso de <span class="text-primary">Java</span></h1>
+                            </div>
+                            <div class="col-lg-12 col-xl-6">
+                                <h1 class="display-1 text-light text-center text-xl-end">09 / 11 / 2023 </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center mb-5"> Cursos mais procurados</h1>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/java-banner.jpg}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Java Full-stack Developer</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/csharp-banner.png}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">C#</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/uxui-banner.png}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">UX/UI</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/bancodedados-banner.jpg}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Banco de dados</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/logica-banner.png}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Lógica de Programação</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/spring-banner.png}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Spring Boot</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/react-banner.png}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">React.js</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/node-banner.jpg}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Node.js</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"><img class="card-img-top w-100" th:src="@{/edu/assets/img/gallery/python-banner.jpg}" alt="courses" />
+                        <div class="card-body">
+                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Python</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href="#!">Vantage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="bg-holder" th:style="'background-image:url(' + @{/edu/assets/img/gallery/funfacts-2-bg.png} + ');'" style="background-position:center;background-size:cover;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img th:src="@{/edu/assets/img/gallery/published.png}" height="100" alt="..." />
+                    <h1 class="my-2">+ 100</h1>
+                    <p class="text-info fw-bold">CURSOS</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img th:src="@{/edu/assets/img/gallery/instructors.png}" height="100" alt="..." />
+                    <h1 class="my-2">+ 999</h1>
+                    <p class="text-info fw-bold">ESTUDANTES</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img th:src="@{/edu/assets/img/gallery/learners.png}" height="100" alt="..." />
+                    <h1 class="my-2">+ 499</h1>
+                    <p class="text-info fw-bold">ALUNOS SATISFEITOS</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img th:src="@{/edu/assets/img/gallery/awards.png}" height="100" alt="..." />
+                    <h1 class="my-2">+ 50</h1>
+                    <p class="text-info fw-bold">RECOMPENSAS DISTRIBUIDAS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="bg-100 pt-6">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h6 class="font-sans-serif text-primary fw-bold">Nossos planos</h6>
+                    <h1 class="mb-3">Preços</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-5 mb-md-0 h-100">
+                        <div class="text-center mb-5"><span class="badge bg-black fw-normal text-uppercase bg-secondary">Basic</span></div>
+                        <div class="card-body px-4 py-6 py-md-5 py-lg-6">
+                            <div class="d-flex justify-content-start text-secondary"><span class="h4 mb-0 mt-2 me-2">R$</span><span class="display-3 fw-medium">0.</span><span class="display-4 fw-medium">00</span></div>
+                            <p class="text-muted mb-2 my-md-3">Plano básico com todos os cursos gratuítos</p>
+                            <hr class="border border-1" />
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Acesso a todos os cursos</li>
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Fórum de alunos</li>
+                                <li class="mb-3"><i class="fas fa-check text-muted me-2"></i>Acesso offline</li>
+                                <li class="mb-3"><i class="fas fa-check text-muted me-2"></i>Certificado</li>
+                                <li class="mb-3"><i class="fas fa-check text-muted me-2"></i>Reuniões privadas</li>
+                            </ul>
+                            <div class="d-grid"> <a class="btn btn-lg btn-primary" href="/login">Entrar</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-5 mb-md-0 h-100">
+                        <div class="text-center mb-5"><span class="badge bg-black fw-normal text-uppercase bg-info">premium</span></div>
+                        <div class="card-body px-4 py-6 py-md-5 py-lg-6">
+                            <div class="d-flex justify-content-start text-secondary"><span class="h4 mb-0 mt-2 me-2">R$</span><span class="display-3 fw-medium">27.</span><span class="display-4 fw-medium">99</span>/mês</div>
+                            <p class="text-muted mb-2 my-md-3">O plano mais popular e acessível para todos com mais benefícios</p>
+                            <hr class="border border-1" />
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Acesso a todos os cursos</li>
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Fórum de alunos</li>
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Acesso offline</li>
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Certificado</li>
+                                <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Reuniões privadas</li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-lg btn-secondary" href="#!">Assinar</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of .container-->
+
+    </section>
+
+
+    <section class="bg-secondary">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><h1 class="fw-bold text-white">Vantage</h1></a>
+                    <p class="text-light my-4"> <i class="fas fa-map-marker-alt me-3"></i><span class="text-light">Centro Universitário Senac</span></p>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
+                    <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Comunidade</h5>
+                    <ul class="list-unstyled mb-md-4 mb-lg-0">
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                    <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Informações</h5>
+                    <ul class="list-unstyled mb-md-4 mb-lg-0">
+                        <li class="lh-lg"><a class="text-200" href="#!">Sobre</a></li>
+                        <li class="lh-lg"><a class="text-200" href="#!">Preços</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                    <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif"> Mais</h5>
+                    <ul class="list-unstyled mb-md-4 mb-lg-0">
+                        <li class="lh-lg"><a class="text-200" href="#!">Inventores</a></li>
+                        <li class="lh-lg"><a class="text-200" href="#!">Termos de Uso</a></li>
+                        <li class="lh-lg"><a class="text-200" href="#!">Politicas de Privacidade</a></li>
+                        <li class="lh-lg"><a class="text-200" href="#!">Ajuda</a></li>
+                        <li class="lh-lg"><a class="text-200" href="#!">Acessibilidade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end of .container-->
+
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
+
+
+    <section class="py-0" style="margin-top: -5.8rem;">
+        <div class="container bg-secondary">
+            <div class="row justify-content-md-center justify-content-evenly py-4">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
+                    <p class="fs--1 my-2 text-white fw-bold">&copy; Vantage 2023 - Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- ===============================================-->
+<!--    End of Main Content-->
+<!-- ===============================================-->
+
+
+
+
+<!-- ===============================================-->
+<!--    JavaScripts-->
+<!-- ===============================================-->
+<script th:src="@{/edu/vendors/popperjs/popper.min.js}" src=""></script>
+<script th:src="@{/edu/vendors/bootstrap/bootstrap.min.js}" src=""></script>
+<script th:src="@{/edu/vendors/is/is.min.js}" src=""></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+<script th:src="@{/edu/vendors/fontawesome/all.min.js}" src=""></script>
+<script th:src="@{/edu/assets/js/theme.js}" src=""></script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Rubik:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entrar</title>
+
+    <!-- Icons CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/feather.css}">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/daterangepicker.css}">
+    <!-- App CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/app-light.css}" id="lightTheme">
+</head>
+<body class="light ">
+<div class="wrapper">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form th:action="@{/login}" method="post" class="text-center">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="/login">
+                <h1>Vantage</h1>
+            </a>
+            <h1 class="h6 mb-3">Entrar</h1>
+            <div th:if="${param.error}" class="alert alert-danger">
+                Email ou senha inválido.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                Deslogado com sucesso.</div>
+            <div class="login-form">
+            <div class="form-group">
+                <label for="username" class="sr-only">Email</label>
+                <input type="email" id="username" name="username" class="form-control form-control-lg" placeholder="Email" required autofocus="">
+            </div>
+            <div class="form-group">
+                <label for="password" class="sr-only">Senha</label>
+                <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Senha" required>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Manter-se logado
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            <div class="mt-3">
+                <span>Não possui uma conta? <a href="/register">Registre-se</a></span>
+            </div>
+            <p class="mt-5 mb-3 text-muted">© 2023</p>
+        </form>
+    </div>
+</div>
+<script th:src="@{/plataform/js/jquery.min.js}"></script>
+<script th:src="@{/plataform/js/popper.min.js}"></script>
+<script th:src="@{/plataform/js/moment.min.js}"></script>
+<script th:src="@{/plataform/js/bootstrap.min.js}"></script>
+<script th:src="@{/plataform/js/simplebar.min.js}"></script>
+<script th:src="@{/plataform/js/daterangepicker.js}"></script>
+<script th:src="@{/plataform/js/jquery.stickOnScroll.js}"></script>
+<script th:src="@{/plataform/js/tinycolor-min.js}"></script>
+<script th:src="@{/plataform/js/config.js}"></script>
+<script th:src="@{/plataform/js/apps.js}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag()
+    {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+</script>
+</body>
+</html>
+</body>
+</html>

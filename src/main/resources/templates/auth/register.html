@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registre-se</title>
+
+    <!-- Icons CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/feather.css}">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/daterangepicker.css}">
+    <!-- App CSS -->
+    <link rel="stylesheet" th:href="@{/plataform/css/app-light.css}" id="lightTheme">
+</head>
+<body class="light ">
+    <div class="wrapper">
+        <div class="align-items-center d-flex justify-content-center vh-100">
+            <form th:action="@{/register}" method="post" class="col-lg-5 col-md-8 col-10 mx-auto">
+                <div class="mx-auto text-center my-4">
+<!--                    <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="/">-->
+<!--                        <h1 class="fw-bold ">Vantage</h1>-->
+<!--                    </a>-->
+                    <h2 class="my-3">Registrar-se</h2>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input name="name" type="text" id="name" class="form-control" th:field="*{user.name}">
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername">Email</label>
+                    <input type="email" class="form-control" id="inputUsername" th:field="*{user.username}">
+                </div>
+                <hr class="my-4">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputPassword5">Senha</label>
+                            <input type="password" class="form-control" id="inputPassword5" th:field="*{user.password}">
+                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label for="inputPassword6">Confirm Password</label>-->
+<!--                            <input type="password" class="form-control" id="inputPassword6">-->
+<!--                        </div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-2">Password requirements</p>
+                        <p class="small text-muted mb-2"> To create a new password, you have to meet all of the following
+                            requirements: </p>
+                        <ul class="small text-muted pl-4 mb-0">
+                            <li> Minimum 8 character</li>
+                            <li>At least one special character</li>
+                            <li>At least one number</li>
+                            <li>Can’t be the same as a previous password</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar-se</button>
+                <div class="d-flex justify-content-center mt-3">
+                    <span>Já possui uma conta? <a href="/login">Entrar</a></span>
+                </div>
+                <p class="mt-5 mb-3 text-muted text-center">© 2023</p>
+            </form>
+        </div>
+    </div>
+    <script th:src="@{/plataform/js/jquery.min.js}"></script>
+    <script th:src="@{/plataform/js/popper.min.js}"></script>
+    <script th:src="@{/plataform/js/moment.min.js}"></script>
+    <script th:src="@{/plataform/js/bootstrap.min.js}"></script>
+    <script th:src="@{/plataform/js/simplebar.min.js}"></script>
+    <script th:src="@{/plataform/js/daterangepicker.js}"></script>
+    <script th:src="@{/plataform/js/jquery.stickOnScroll.js}"></script>
+    <script th:src="@{/plataform/js/tinycolor-min.js}"></script>
+    <script th:src="@{/plataform/js/config.js}"></script>
+    <script th:src="@{/plataform/js/apps.js}"></script>
+
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-56159088-1');
+    </script>
+</body>
+</html>
