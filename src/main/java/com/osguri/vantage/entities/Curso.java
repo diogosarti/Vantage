@@ -3,6 +3,8 @@ package com.osguri.vantage.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_cursos")
 public class Curso {
@@ -15,4 +17,7 @@ public class Curso {
 
     @NotBlank
     private String deacricao;
+
+    @ManyToMany(mappedBy = "cursos")
+    private Set<User> users;
 }
