@@ -1,7 +1,9 @@
 package com.osguri.vantage.infra.config;
 
+import com.osguri.vantage.entities.Curso;
 import com.osguri.vantage.entities.Role;
 import com.osguri.vantage.entities.User;
+import com.osguri.vantage.repositories.CursoRepository;
 import com.osguri.vantage.repositories.RoleRepository;
 import com.osguri.vantage.repositories.UserRepository;
 import com.osguri.vantage.services.UserService;
@@ -29,6 +31,10 @@ public class LoadDatabase implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private CursoRepository cursoRepository;
+
     @Transactional
     @Override
     public void run(String... args) throws Exception {
@@ -44,6 +50,14 @@ public class LoadDatabase implements CommandLineRunner {
         user.getRoles().add(roleRepository.findByName("USER"));
         User admin = new User("admin", "admin@admin.com", encoder.encode("admin123"));
         admin.getRoles().add(roleRepository.findByName("ADMIN"));
-        userRepository.saveAll(Arrays.asList(user, admin));
+        User diogo = new User("admin", "diogo@diogo.com", encoder.encode("diogo123"));
+        diogo.getRoles().add(roleRepository.findByName("ADMIN"));
+        userRepository.saveAll(Arrays.asList(user, admin, diogo));
+
+        Curso curso1 = new Curso("Curso de java", "Meu curso de java", admin);
+        Curso curso2 = new Curso("Curso de php KKKKKKKKKK", "Meu curso da bosta do PHP KAKAKAKKA", admin);
+        Curso curso3 = new Curso("Curso de MYSQL", "Meu curso de sql", admin);
+        Curso curso4 = new Curso("Curso do Dioguinho", "Meu curso de sql", diogo);
+        cursoRepository.saveAll(Arrays.asList(curso1, curso2, curso3, curso4));
     }
 }

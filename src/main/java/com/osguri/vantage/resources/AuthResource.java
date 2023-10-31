@@ -17,6 +17,11 @@ public class AuthResource {
     @Autowired
     private UserService userService;
 
+    @GetMapping(value = "/access-denied")
+    public String redirect(){
+        return "redirect:/dashboard";
+    }
+
     @GetMapping(value = "/login")
     public String login(Model model, Authentication authentication) {
         model.addAttribute("user", new User());

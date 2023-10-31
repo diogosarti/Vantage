@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{user/dashboard/fragmentos/userdashboardhead}"></head>
+<body class="horizontal  light  ">
+<div class="wrapper">
+    <nav th:replace="~{user/dashboard/fragmentos/userdashboardnavbar}"></nav>
+    <main role="main" class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row align-items-center mb-2">
+                        <div class="col">
+                            <h2 class="h5 page-title">Início</h2>
+                        </div>
+                    </div>
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+    </main> <!-- main -->
+</div>
+<div th:replace="~{user/dashboard/fragmentos/userdahboardscripts}"></div>
 </body>
 </html>

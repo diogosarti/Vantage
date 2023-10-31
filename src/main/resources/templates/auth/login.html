@@ -18,15 +18,15 @@
 <div class="wrapper">
     <div class="d-flex justify-content-center align-items-center vh-100">
         <form th:action="@{/login}" method="post" class="text-center">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="/login">
-                <h1>Vantage</h1>
+            <a class="navbar-brand my-4 flex-fill text-center" href="/login">
+                <img th:src="@{/plataform/assets/images/vanatageHighLogo.png}">
             </a>
             <h1 class="h6 mb-3">Entrar</h1>
             <div th:if="${param.error}" class="alert alert-danger">
                 Email ou senha inválido.
             </div>
             <div th:if="${param.logout}" class="alert alert-success">
-                Deslogado com sucesso.</div>
+                Você saiu.</div>
             <div class="login-form">
             <div class="form-group">
                 <label for="username" class="sr-only">Email</label>

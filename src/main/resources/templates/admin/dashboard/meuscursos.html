@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/user/dashboard/fragmentos/userdashboardhead}"></head>
+<body class="vertical  light  ">
+<div class="wrapper">
+    <nav th:replace="~{admin/dashboard/fragmentos/adminnav::navbar}"></nav>
+    <aside th:replace="~{admin/dashboard/fragmentos/adminnav::navbaraside}"></aside>
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row align-items-center mb-2">
+                        <div class="col">
+                            <h2 class="h5 page-title">Meus cursos</h2>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <!-- Small table -->
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <!-- table -->
+                                    <table class="table datatables" id="dataTable-1">
+                                        <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Data da criação</th>
+                                            <th>Data da edição</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="curso : ${cursos}">
+                                                <td th:text="${curso.nome}"></td>
+                                                <td th:text="${curso.deacricao}"></td>
+                                                <td th:text="${#dates.format(curso.createdAt, 'dd/MM/yyyy')}"></td>
+                                                <td th:text="${#dates.format(curso.createdAt, 'dd/MM/yyyy') == #dates.format(curso.updatedAt, 'dd/MM/yyyy') ? '-' : #dates.format(curso.updatedAt, 'dd/MM/yyyy')}"></td>
+                                                <td>
+                                                    <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="text-muted sr-only">Ação</span>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" th:href="@{'/admin/cursos/' + ${curso.id} + '/edit'}">Editar</a>
+                                                        <a class="dropdown-item" th:href="@{'/admin/cursos/' + ${curso.id} + '/delete'}">Deletar</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> <!-- simple table -->
+                    </div> <!-- end section -->
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+        </div>
+    </main>
+</div>
+
+<div th:replace="~{/user/dashboard/fragmentos/userdahboardscripts}"></div>
+</body>
+</html>

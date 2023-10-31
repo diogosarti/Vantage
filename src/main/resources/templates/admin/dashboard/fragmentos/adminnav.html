@@ -1,0 +1,66 @@
+<nav th:fragment="navbar" class="topnav navbar navbar-light">
+    <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+    </button>
+    <ul class="nav align-items-center">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="avatar avatar-sm mt-2">
+                      <i class="fe fe-user fe-24"></i>
+                  </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Configurações</a>
+                <a class="dropdown-item" th:href="@{/logout}">Sair</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<aside th:fragment="navbaraside" class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+    <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+    </a>
+    <nav class="vertnav navbar navbar-light">
+        <!-- nav bar -->
+        <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mt-2 mx-auto flex-fill text-center" th:href="@{/dashboard}">
+                <svg width="48" height="35" viewBox="0 0 38 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_56_18)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2188 11.75V19.8125C29.2188 21.6674 24.7086 23.8432 19.1439 23.8438C13.5791 23.8443 9.06606 21.6695 9.0625 19.8146L9.0625 11.75" fill="#04B2D9"/>
+                        <path d="M29.2188 11.75V19.8125C29.2188 21.6674 24.7086 23.8432 19.1439 23.8438C13.5791 23.8443 9.06606 21.6695 9.0625 19.8146L9.0625 11.75" stroke="#04B2D9"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.71875L19.1406 1L37.2812 7.71875L19.1406 16.4531L1 7.71875Z" fill="#04B2D9" stroke="#00A1C5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.01562 8.39062V17.3906" stroke="#04B2D9"/>
+                        <path d="M3.01562 17C3.01562 17 4.69531 19.6875 4.69531 21.7031C4.69531 23.0469 3.85547 23.7188 3.01562 23.7188C2.17578 23.7188 1.33594 23.0469 1.33594 21.7031C1.33594 19.6875 3.01562 17 3.01562 17Z" fill="#04B2D9" stroke="#04B2D9" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_56_18">
+                            <rect width="38" height="25" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+        </div>
+        <p class="text-muted nav-heading mt-1 mb-1">
+            <span>Minha área</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+                <a class="nav-link" th:href="@{/dashboard}">
+                    <i class="fe fe-home fe-16"></i>
+                    <span class="ml-3 item-text">Início</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <i class="fe fe-book fe-16"></i>
+                    <span class="ml-3 item-text">Cursos</span>
+                </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="contact">
+                    <a class="nav-link pl-3" th:href="@{/admin/cursos}"><span class="ml-1">Meus cursos</span></a>
+                    <a class="nav-link pl-3" th:href="@{/admin/cursos/add}"><span class="ml-1">Adicionar curso</span></a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</aside>

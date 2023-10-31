@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/user/dashboard/fragmentos/userdashboardhead}"></head>
+<body class="vertical  light  ">
+<div class="wrapper">
+    <nav th:replace="~{admin/dashboard/fragmentos/adminnav::navbar}"></nav>
+    <aside th:replace="~{admin/dashboard/fragmentos/adminnav::navbaraside}"></aside>
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="page-title">Adicionar curso</h2>
+                    <p class="text-muted">Obrigado por contribuir com a nossa comunidade! Adiocione seu curso.</p>
+                    <form th:action="@{/admin/cursos/add}" method="post">
+                        <div>
+                            <div class="card shadow mb-4">
+                                <div class="card-header">
+                                    <strong class="card-title">Adicionar</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="courseName">Nome</label>
+                                                <input type="text" id="courseName" name="courseName" class="form-control">
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="courseAbout">Sobre</label>
+                                                <textarea class="form-control" name="courseAbout" id="courseAbout" rows="4"></textarea>
+                                            </div>
+                                        </div> <!-- /.col -->
+                                        <div class="col-md-6">
+                                            <div class="card shadow mb-4">
+                                                <div class="card-header">
+                                                    <strong>Imagem miniatura</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div id="drag-drop-area"></div>
+                                                </div> <!-- .card-body -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- / .card -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <strong class="card-title">Aulas</strong>
+                                    <button type="button" class="btn mb-2 btn-success" data-toggle="modal" data-target="#varyModal" data-whatever="@mdo">Nova aula</button>
+                                    <div class="modal fade" id="varyModal" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="varyModalLabel">Nova aula</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="aulaName" class="col-form-label">Nome:</label>
+                                                            <input type="text" class="form-control" autofocus id="aulaName">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="auladescription" class="col-form-label">Descrição:</label>
+                                                            <textarea class="form-control" id="auladescription"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="aulaUrl" class="col-form-label">Url:</label>
+                                                            <input type="url" placeholder="https://www.youtube.com/watch?v=" class="form-control" id="aulaUrl">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <button type="button" id="btnaddaula" class="btn mb-2 btn-primary">Adicionar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel">Editar</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="edit-aulaName" class="col-form-label">Nome:</label>
+                                                            <input type="text" class="form-control" id="edit-aulaName" required autofocus>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="edit-auladescription" class="col-form-label">Descrição:</label>
+                                                            <textarea class="form-control" id="edit-auladescription" required></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="edit-aulaUrl" class="col-form-label">Url:</label>
+                                                            <input required type="url" placeholder="https://www.youtube.com/watch?v=" class="form-control" id="edit-aulaUrl">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <button type="button" id="edit-btnaddaula" class="btn mb-2 btn-primary">Salvar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Descrição</th>
+                                                    <th>Url</th>
+                                                    <th>Ação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="aulasTableBody">
+
+                                            </tbody>
+                                        </table>
+                            </div> <!-- / .card -->
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn mb-2 btn-primary">Adicionar Curso</button>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+    </main>
+</div>
+<div th:replace="~{/user/dashboard/fragmentos/userdahboardscripts}"></div>
+<script>
+    let aulas = [];
+
+    $(document).ready(() => {
+        $('#btnaddaula').on('click', (e) => {
+            let nomeAula = $('#aulaName').val();
+            let descricaoAula = $('#auladescription').val();
+            let urlAula = $('#aulaUrl').val();
+            let rowId = $('table tbody tr').length + 1;
+            let newRow = '<tr data-rowid="' + rowId + '"><td>' + nomeAula + '</td><td>' + descricaoAula + '</td><td>' + urlAula + '</td><td><div class="dropdown"><button class="btn btn-sm dropdown-toggle" type="button" id="dr' + rowId + '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-muted sr-only">Ação</span></button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr' + rowId + '"><a class="dropdown-item editar-aula" role="button">Editar</a><a role="button" class="dropdown-item remover-aula">Remover</a></div></div></td></tr>';
+            $('table tbody').append(newRow);
+            $('#varyModal').modal('hide');
+
+            let novaAula = {
+                "titulo": nomeAula,
+                "descricao": descricaoAula,
+                "url": urlAula
+            };
+            aulas.push(novaAula);
+
+            $('#aulaName').val('');
+            $('#auladescription').val('');
+            $('#aulaUrl').val('');
+        });
+        $('table tbody').on('click', '.remover-aula', function (e){
+            e.preventDefault();
+            $(this).closest('tr').remove();
+            let rowId = $(this).closest('tr').data('rowid');
+            aulas.splice(rowId - 1, 1);
+            $(this).closest('tr').remove();
+        }).on('click', '.editar-aula', function(e) {
+            e.preventDefault();
+            let row = $(this).closest('tr');
+            let rowId = $('table tbody tr').index(row);
+
+            let nomeAula = row.find('td:eq(0)').text();
+            let descricaoAula = row.find('td:eq(1)').text();
+            let urlAula = row.find('td:eq(2)').text();
+
+            $('#edit-aulaName').val(nomeAula);
+            $('#edit-auladescription').val(descricaoAula);
+            $('#edit-aulaUrl').val(urlAula);
+
+            $('#edit-btnaddaula').data('rowid', rowId);
+
+            $('#editModal').modal('show');
+        });
+
+
+        $('#edit-btnaddaula').on('click', function() {
+            let rowId = $(this).data('rowid');
+
+            let nomeAula = $('#edit-aulaName').val();
+            let descricaoAula = $('#edit-auladescription').val();
+            let urlAula = $('#edit-aulaUrl').val();
+
+            aulas[rowId] = {titulo: nomeAula, descricao: descricaoAula, url: urlAula};
+
+            $('table tbody tr:eq(' + rowId + ')').find('td:eq(0)').text(nomeAula);
+            $('table tbody tr:eq(' + rowId + ')').find('td:eq(1)').text(descricaoAula);
+            $('table tbody tr:eq(' + rowId + ')').find('td:eq(2)').text(urlAula);
+
+            $('#editModal').modal('hide');
+        });
+
+        $('#aulasTableBody tr').each(function () {
+            let nome = $(this).find('td:eq(0)').text();
+            let descricao = $(this).find('td:eq(1)').text();
+            let url = $(this).find('td:eq(2)').text();
+
+            let aula = {
+                "titulo": nome,
+                "descricao": descricao,
+                "url": url
+            };
+
+            aulas.push(aula);
+        });
+        $('form').submit(function(event) {
+            $('<input />').attr('type', 'hidden')
+                .attr('name', 'aulas')
+                .attr('value', JSON.stringify(aulas))
+                .appendTo('form');
+            return true;
+        }).on('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

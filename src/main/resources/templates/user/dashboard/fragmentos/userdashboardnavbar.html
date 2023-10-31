@@ -1,0 +1,51 @@
+<nav th:fragment="userdashboardnavbar" class="navbar navbar-expand-lg navbar-light bg-white flex-row border-bottom shadow">
+    <div class="container">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand mx-lg-1 mr-0" href="/dashboard">
+                <img th:src="@{/plataform/assets/images/vanatageHighLogo.png}">
+            </a>
+            <button class="navbar-toggler mt-2 mr-auto toggle-sidebar text-muted">
+                <i class="fe fe-menu navbar-toggler-icon"></i>
+            </button>
+            <div class="navbar-slide bg-white ml-lg-4" id="navbarSupportedContent">
+                <a href="#" class="btn toggle-sidebar d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+                    <i class="fe fe-x"><span class="sr-only"></span></i>
+                </a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <span class="ml-lg-2">Início</span>
+                            <!--                            <span class="badge badge-pill badge-primary">New</span>-->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/cursos}">
+                            <span class="ml-lg-2">Meus Cursos</span>
+                            <!--                            <span class="badge badge-pill badge-primary">New</span>-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="navbar-nav d-flex align-items-center flex-row">
+            <li class="nav-item dropdown ml-lg-0">
+                <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="avatar avatar-sm mt-2">
+                    <i class="fe fe-user fe-24 avatar-img rounded-circle"></i>
+                </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#">Configurações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="/logout">Sair</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

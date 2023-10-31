@@ -13,4 +13,9 @@ public class UserResource {
     public String renderHome(){
         return "/user/dashboard/index";
     }
+
+    @GetMapping("/cursos")
+    public String renderMeusCursos(){
+        return "/user/dashboard/meuscursos";
+    }
 }

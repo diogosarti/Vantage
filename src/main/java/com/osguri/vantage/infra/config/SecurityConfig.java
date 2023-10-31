@@ -32,7 +32,10 @@ public class SecurityConfig{
                     login.loginPage("/login");
                     login.loginProcessingUrl("/login");
                     login.defaultSuccessUrl("/dashboard");
+                    login.successForwardUrl("/dashboard");
                     login.permitAll();
+                }).exceptionHandling(ex ->{
+                    ex.accessDeniedPage("/access-denied");
                 })
                 .logout(LogoutConfigurer::permitAll);
         return http.build();

@@ -41,6 +41,9 @@ public class User {
     )
     private List<Role> roles = new ArrayList<>();
 
+    @OneToMany(mappedBy = "createdBy")
+    private List<Curso> cursosCriados = new ArrayList<>();
+
     public User(String name, String username, String password) {
         this.name = name;
         this.username = username;
