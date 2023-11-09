@@ -14,6 +14,10 @@ public class CursoService{
     @Autowired
     private CursoRepository repository;
 
+    public List<Curso> findAll(){
+        return repository.findAll();
+    }
+
     public List<Curso> getAdminCursos(User user){
         return repository.findByCreatedBy(user);
     }

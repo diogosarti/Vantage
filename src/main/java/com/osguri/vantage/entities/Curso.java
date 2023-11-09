@@ -47,6 +47,8 @@ public class Curso {
     @UpdateTimestamp
     private Instant updatedAt;
 
+    private String banner;
+
     public Curso(String nome, String deacricao, User createdBy) {
         this.nome = nome;
         this.deacricao = deacricao;

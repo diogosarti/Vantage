@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -48,13 +48,13 @@
         </div>
     </nav>
 
-    <section class="pb-9 pt-7 bg-600">
+    <section class="pb-11 pt-7 bg-600">
 
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h6 class="font-sans-serif text-primary fw-bold">Todos os cursos de</h6>
-                    <h1 class="mb-6">Tecnologia</h1>
+                    <h6 class="font-sans-serif text-primary fw-bold">Detalhes de:</h6>
+                    <h1 class="mb-6" th:text="${curso.nome}"></h1>
                 </div>
             </div>
         </div>
@@ -62,17 +62,24 @@
 
     </section>
 
-    <section class="pb-0" style="margin-top:-17rem">
+    <section style="margin-top:-21.5rem">
 
         <div class="container">
             <div class="row">
-                <div th:each="curso : ${cursos}" class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top w-100" th:src="@{'/uploads/' + ${curso.banner}}" alt="courses" />
-                        <div class="card-body">
-                            <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1" th:text="${curso.nome}">Course Name</h5>
-                            <a class="text-muted fs--1 stretched-link text-decoration-none" th:href="@{'/cursos/' + ${curso.id}}">Acessar</a>
-                        </div>
+                <div class="col-md-8"><img class="w-100" th:src="@{'/uploads/' + ${curso.banner}}" alt="..." />
+                    <h1 class="my-4">Descrição</h1>
+                    <p th:text="${curso.deacricao}"></p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Estudantes </strong>: <span th:text="${curso.users.size()}"></span></li>
+                            <li class="list-group-item text-center">
+                                <form class="p-4" method="post">
+                                    <a class="btn btn-primary">Começar</a>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

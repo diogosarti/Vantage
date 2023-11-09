@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <h2 class="page-title">Adicionar curso</h2>
                     <p class="text-muted">Obrigado por contribuir com a nossa comunidade! Adiocione seu curso.</p>
-                    <form th:action="@{/admin/cursos/add}" method="post">
+                    <form th:action="@{/admin/cursos/add}" enctype="multipart/form-data" method="post">
                         <div>
                             <div class="card shadow mb-4">
                                 <div class="card-header">
@@ -35,7 +35,13 @@
                                                     <strong>Imagem miniatura</strong>
                                                 </div>
                                                 <div class="card-body">
-                                                    <div id="drag-drop-area"></div>
+                                                    <div class="input-group pt-3">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="image-banner" name="image-banner" accept="image/*">
+                                                            <label class="custom-file-label" for="image-banner">Selecionar</label>
+                                                        </div>
+                                                    </div>
+
                                                 </div> <!-- .card-body -->
                                             </div>
                                         </div>

@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.ArrayList;
@@ -51,12 +53,34 @@ public class AdminResource {
         return "admin/dashboard/adicionarcurso";
     }
     @PostMapping("/cursos/add")
-    public String adicionarCurso(@RequestParam("courseName") String courseName,
-                                 @RequestParam("courseAbout") String courseAbout,
-                                 @RequestParam("aulas") String aulasJson,
-                                 Principal principal) {
+    public String adicionarCurso(
+            @RequestParam("image-banner")MultipartFile banner,
+            @RequestParam("courseName") String courseName,
+            @RequestParam("courseAbout") String courseAbout,
+            @RequestParam("aulas") String aulasJson,
+            Principal principal) {
+        if (banner.isEmpty()) {
+            return "Erro ao fazer upload do arquivo.";
+        }
+
+        String imagePath;
+        try {
+            String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads/";
+
+            String fileName = System.currentTimeMillis() + banner.getOriginalFilename();
+            File destinationFile = new File(uploadDirectory, fileName);
+            banner.transferTo(destinationFile);
+
+            // Salvar o caminho do arquivo no banco de dados
+            imagePath = fileName;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Erro ao fazer upload do arquivo.";
+        }
+
         User user = userService.findByUsername(principal.getName());
         Curso curso = new Curso(courseName, courseAbout, user);
+        curso.setBanner(imagePath);
         cursoService.saveCurso(curso);
 
         ObjectMapper objectMapper = new ObjectMapper();
